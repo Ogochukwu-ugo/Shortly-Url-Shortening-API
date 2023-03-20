@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React, { Suspense, useState } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
+import Header from './Components/Header/Header';
+import AppRoutes from './Router';
+
+
+const LOGIN = "/login"
+const SIGNUP = "/signup"
 
 function App() {
+  const [isOpen, setIsOpen] =useState(false);
+  const location = useLocation(); // move useLocation inside App function
+  const { pathname } = location;
+
+  const handleOpen =() => setIsOpen(!isOpen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {!(pathname === LOGIN || pathname === SIGNUP) && (
+        <Header {...{isOpen, handleOpen}}/>
+    )}
+      
+      <Suspense fallback={<div>Loading</div>}>
+        <Routes>
+          {AppRoutes.map((route) => (
+            <Route path={route.path} element={route.element} key={route.path} />
+          ))}
+        </Routes>
+      </Suspense>
+    </>
   );
 }
 
 export default App;
+

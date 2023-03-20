@@ -1,38 +1,410 @@
-.App {
-  text-align: center;
+.heroMain {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 10rem;
+    overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heroContent {
+    text-align: center;
+    padding-top: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.heroContent h1 {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-left: 0rem;
+    color: hsl(257, 27%, 26%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.heroContent p {
+    width: 100%;
+    margin-left: 0rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: hsl(257, 7%, 63%);
 }
 
-.App-link {
-  color: #61dafb;
+.heroBtn {
+    width: 9rem;
+    font-size: .9rem;
+    font-weight: 600;
+    color: whitesmoke;
+    padding: .7rem;
+    margin-left: 0rem;
+    border: none;
+    border-radius: 1.6rem;
+    background-color: hsl(180, 65%, 50%);
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.heroBtn:hover,
+#shortenBtn:hover {
+    background-color: var(--cyan);
+    opacity: .8;
+    color: whitesmoke;
+}
+
+.heroImg img {
+    width: 95%;
+    height: auto;
+    margin: 10% auto 0% 20%;
+}
+
+
+
+/* Statistics CSS */
+
+.statistics {
+    position: relative;
+    background-color: hsl(225, 33%, 95%);
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+source[srcset^="../src/images/"] {
+    max-width: 100% ;
+    margin: auto 0;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+.bgShorten img {
+    width: 100% ;
+    height: 100%;
+    margin: auto 0;
+    object-fit: cover;
+}
+
+.statFormSection {
+    position: relative;
+    top: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 69.5%;
+    height: 8rem;
+    background-color: var(--dviolet);
+    border: none;
+    border-radius: .5rem;
+}
+
+.statForm {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#shortenLink {
+    width: 100%;
+    border: none;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--grayviolet);
+}
+
+#shortenLink::placeholder {
+    font-weight: 500;
+    color: var(--grayviolet);
+}
+
+#shortenBtn {
+    width: 100%;
+    height: 2.5rem;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-left: 0rem;
+    margin-top: .8rem;
+    background-color: hsl(180, 65%, 50%);
+    color: whitesmoke;
+    border-radius: .4rem;
+}
+
+.advanceStat {
+    padding-top: 2%;
+    padding-bottom: 5%;
+}
+
+.advanceStat h3 {
+    font-weight: 800;
+    color: hsl(257, 27%, 26%);
+}
+
+.advanceStat p {
+    width: 80%;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 400;
+    color: var(--gray);
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.brandBG {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: var(--dviolet);
+    z-index: 3;
+}
+
+.brand1{
+    top: -1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.brand2 {
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.brand3 {
+    top: 72.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cardContainer {
+    position: relative;
+    width: 80%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+  .line {
+    width: .3rem;
+    height: 2.5rem;
+    margin: auto;
+    background-color: var(--cyan);
+}
+
+.line2 {
+    margin-top: 0%;
+}
+
+.card {
+    padding: 3rem 1.5rem 0rem 1.5rem;
+    height: 12rem;
+    text-align: center;
+    border: none;
+    border-radius: .2rem;
+    z-index: 2;
+}
+
+.card h6 {
+    font-weight: 600;
+    color: var(--dviolet);
+}
+
+.card p {
+    font-size: .8rem;
+    color: var(--gray);
+}
+
+.card2 {
+    margin-top:  10%;
+}
+
+.card3 {
+    margin-top: 10%;
+}
+
+
+
+
+
+@media only screen and (min-width:768px) and (max-width: 900px) {
+    .heroMain {
+        display: flex;
+        flex-direction: row;
+    }
+    .heroContent h1 {
+        width: 100%;
+        font-size: 3rem;
+        font-weight: 800;
+        margin-left: 2rem;
+        text-align: left;
+    }
+
+    .heroContent p {
+        width: 90%;
+        text-align: left;
+        margin-left: 2rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: hsl(257, 7%, 63%);
+    }
+
+    .heroBtn {
+        margin-left: 2rem;
+    }
+
+    .statForm {
+        flex-direction: row;
+    }
+
+    #shortenBtn {
+        width: 8rem;
+        margin-left: 1rem;
+        margin-top: 0rem;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-direction: row;
+        width: 90%;
+        margin-top: -5%;
+    }
+
+    .card {
+        padding: 3rem 1rem 0rem 1rem;
+        text-align: left;
+    }
+
+    .advanceStat p {
+        width: 55%;
+    }
+
+    .brand1{
+        top: 18.5%;
+        left: 7%;
+    }
+    
+    .brand2 {
+        top: 28.5%;
+        left: 41.5%;
+    }
+    
+    .brand3 {
+        top: 36.5%;
+        left: 76.5%;
+    }
+
+    .card2 {
+        margin-top:  8%;
+    }
+    
+    .card3 {
+        margin-top: 15%;
+    }
+
+    .line {
+        width: 3.5rem;
+        height: .3rem;
+    }
+
+    .line2 {
+        margin-top: 21%;
+    }
+}
+
+
+@media only screen and (min-width:1024px) {
+    .heroMain {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .heroContent {
+        text-align: left;
+        padding-top: 7.5rem;
+    }
+
+    .heroContent h1 {
+        width: 50%;
+        font-size: 3rem;
+        font-weight: 800;
+        margin-left: 14.5rem;
+        
+    }
+
+    .heroContent p {
+        width: 50%;
+        margin-left: 14.5rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: hsl(257, 7%, 63%);
+    }
+
+    .heroBtn {
+        margin-left: 14.5rem;
+    }
+
+    .statForm {
+        flex-direction: row;
+    }
+
+    #shortenBtn {
+        width: 8rem;
+        margin-left: 1rem;
+        margin-top: 0rem;
+    }
+
+    .advanceStat p {
+        width: 30%;
+    }
+
+    .cardContainer {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        margin-top: -5%;
+    }
+
+    .card {
+        padding: 4rem 1.5rem 0rem 1.5rem;
+        text-align: left;
+    }
+
+    .brand1{
+        top: 23%;
+        left: 5%;
+    }
+    
+    .brand2 {
+        top: 36%;
+        left: 39.5%;
+    }
+    
+    .brand3 {
+        top: 46%;
+        left: 74.5%;
+    }
+
+    .card2 {
+        margin-top:  8%;
+    }
+    
+    .card3 {
+        margin-top: 15%;
+    }
+
+      .line {
+        width: 3.5rem;
+        height: .3rem;
+    }
+
+    .line2 {
+        margin-top: 17.5%;
+    }
 }
