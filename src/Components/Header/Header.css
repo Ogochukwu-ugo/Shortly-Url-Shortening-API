@@ -30,11 +30,6 @@
     color: whitesmoke !important;
 }
 
-
-.active-link:active {
-    color: var(vdarkviolet) !important;
-}
-
 .nav-btn {
     display: flex;
     flex-direction: column;
@@ -48,9 +43,15 @@
     color: whitesmoke;
 }
 
+.logBtn:active,
+#navLink:active,
+#navLink:hover {
+    color: var(vdarkviolet) !important;
+}
+
 .signBtn {
     margin-left: 0rem;
-    background-color: hsl(180, 65%, 50%);
+    background-color: var(--cyan);
     color: whitesmoke;
     width: 100%;
     margin: auto;
@@ -61,9 +62,8 @@
 }
 
 .signBtn:hover {
-    background-color: var(--cyan);
-    opacity: .8;
-    color: whitesmoke;
+    color: white;
+    opacity: .9;
 }
 
 @media only screen and (min-width:1024px) {

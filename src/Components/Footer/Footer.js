@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
             <div className='col-md-8 footerNav mt-md-0 mt-2'>
                 <div className='row'>
-                    <div className='col-md-3 linkContainer'>
+                    <div className='col-md-3 footerLinkContainer'>
                         <h5>Features</h5>
                         <ul>
                             <li>Link Shortening</li>
@@ -33,7 +33,7 @@ const Footer = () => {
                             <li>Analytics</li>
                         </ul>
                     </div>
-                    <div className='col-md-3 linkContainer'>
+                    <div className='col-md-3 footerLinkContainer'>
                     <h5>Resources</h5>
                         <ul>
                             <li>Blog</li>
@@ -41,7 +41,7 @@ const Footer = () => {
                             <li>Support</li>
                         </ul>
                     </div>
-                    <div className='col-md-3 linkContainer'>
+                    <div className='col-md-3 footerLinkContainer'>
                     <h5>Company</h5>
                         <ul>
                             <li>About</li>
@@ -50,7 +50,7 @@ const Footer = () => {
                             <li>Contact</li>
                         </ul>
                     </div>
-                    <div className='col-md-3 linkContainer'>
+                    <div className='col-md-3 footerLinkContainer'>
                         <div className='socialIcons'>
                             <AiFillFacebook className='icons'/>
                             <AiOutlineTwitter className='icons'/>
