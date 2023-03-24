@@ -4,25 +4,25 @@ import ShortenMobile from '../../images/bg-shorten-mobile.svg';
 import '../../App.css';
 
 
-const getLinkStored = () => {
-    let links = localStorage.getItem("links")
-
-    if (links) {
-        return JSON.parse(links)
-    } else {
-        return [];
-    }
-};
-
 function Shorten() {
 
     const [text, setText] = useState("");
-    const [links, setLinks] = useState(getLinkStored());
-    const [buttonText, setButtonText] = useState("Copy");
+    const [links, setLinks] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
     const inputRef = useRef(null);
 
-    const handleSubmit = (e) => {
+
+
+    // Get links from localStorage
+    useEffect(() => {
+        const storedLinks = JSON.parse(localStorage.getItem("links"));
+        if (storedLinks) {
+            setLinks(storedLinks);
+        }
+    }, []);
+
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         formValidation();
@@ -41,44 +41,38 @@ function Shorten() {
         }
     };
 
+  
+
 
     const shortenLink = async () => {
         try {
           const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`);
           const data = await response.json();
-    
           console.log(data.result);
-          setLinks(data.result);
+
+          const newLink = {
+            original_link: text,
+            full_short_link: data.result.full_short_link,
+            buttonText: 'Copy'
+          };
+        
+          const updatedLinks = [...links, newLink];
+         setLinks(updatedLinks);
+         localStorage.setItem('links', JSON.stringify(updatedLinks));
           setText('');
-          saveLink(data.result); // Save the new link to localStorage
         } catch (error) {
           console.error(error);
         }
     };
 
     
-
-    const handleCopy = (full_short_link) => {
-        navigator.clipboard.writeText(full_short_link);
-        setButtonText('Copied!');
+    const handleCopy = (index) => {
+        navigator.clipboard.writeText(links[index].full_short_link);
+        const newLinks = [...links];
+        newLinks[index] = {...newLinks[index], buttonText: 'Copied!'};
+        setLinks(newLinks);
     };
-
-    useEffect(() => {
-        const storedLinks = getLinkStored()
-        setLinks(storedLinks)
-    }, [])
     
-    useEffect(() => {
-    localStorage.setItem('links', JSON.stringify(links));
-    }, [links]);
-
-    
-    const saveLink = (data) => {
-        const newLink = { original_link: data.original_link, full_short_link: data.full_short_link }
-        const links = getLinkStored()
-        const updatedLinks = [...links, newLink]
-        localStorage.setItem('links', JSON.stringify(updatedLinks))
-      }
 
   return (
     <>
@@ -108,25 +102,26 @@ function Shorten() {
                     onClick={handleSubmit}
                 />
             </form>
-
-            
-            <section className='d-flex flex-md-row flex-column linkContainer'>
-                <div className='justify-content-center'>
-                    <h6>{links.original_link}</h6>
-                </div>
-                <div className='generateLine'></div>
-                <div className='generateContainer border-2'>
-                    <ul className='d-flex flex-md-row flex-column border'>
-                        <li className='generatedLink'>{links.full_short_link}</li>
-                        <li>
-                        <button className='btn copyBtn' onClick={() => handleCopy(links.full_short_link)}>
-                            {buttonText}
-                        </button>
-                        </li>
-                    </ul>
-                </div>
+            <section className='result'>
+                {links.map((link,index) => (
+                    <article key={index} className='d-flex flex-md-row flex-column linkContainer'>
+                        <div className='justify-content-center'>
+                            <h6 className='my-auto'>{link.original_link}</h6>
+                        </div>
+                        <div className='generateLine'></div>
+                        <div className='generateContainer my-auto'>
+                            <ul className='d-flex flex-md-row flex-column'>
+                                <li className='generatedLink'>{link.full_short_link}</li>
+                                <li className='copyBtnContainer'>
+                                    <button className='btn copyBtn' onClick={() => handleCopy(index)}>
+                                        {link.buttonText}
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                ))}
             </section>
-            
         </section>
     </>
   )

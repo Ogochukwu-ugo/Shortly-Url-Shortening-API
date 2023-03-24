@@ -139,14 +139,36 @@ source[srcset^="../src/images/"] {
     border-radius: .4rem;
 }
 
+.result {
+    height: 7.5rem;
+    margin-top: .5rem;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
 
 .linkContainer {
     justify-content: left;
     text-align: left;
     margin-top: .5rem;
-    padding: .3rem;
+    padding: .4rem .4rem;
     background-color: white;
     border-radius: .4rem;
+}
+
+.generateContainer {
+    justify-content: center;
+    align-items: center;
+}
+
+.generateContainer > ul {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    justify-content: center;
+    align-items: left;
 }
 
   
@@ -163,6 +185,10 @@ source[srcset^="../src/images/"] {
     width: 100%;
     height: 1px;
     background-color: var(--gray);
+}
+
+.copyBtnContainer {
+    margin-left: -2rem;
 }
   
 .copyBtn {
@@ -329,22 +355,38 @@ source[srcset^="../src/images/"] {
     .linkContainer {
         justify-content: space-between;
         text-align: center;
+        padding: 0rem .4rem;
     }
-    
 
     .errormsg {
         top: 100%;
         left: 0%;
     }
 
+    .generateContainer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .generateContainer > ul {
+        margin-top: .3rem;
+        margin-bottom: .3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
     .generatedLink {
         margin-left: 0rem;
-        margin-right: .2rem;
+        margin-right: 1rem;
         margin-bottom: 0rem;
     }
     
     .generateLine {
         display: none;
+    }
+
+    .copyBtnContainer {
+        margin-left: 0rem;
     }
 
     .cardContainer {
@@ -442,9 +484,11 @@ source[srcset^="../src/images/"] {
         margin-top: 0rem;
     }
 
+
     .linkContainer {
         justify-content: space-between;
-        text-align: center;
+        align-items: center;
+        padding: 0rem .4rem;
     }
 
     .errormsg {
@@ -452,19 +496,30 @@ source[srcset^="../src/images/"] {
         left: 0%;
     }
 
-    .generatedContainer ul {
+    .generateContainer {
+        justify-content: center;
         align-items: center;
-        text-align: center;
+    }
+
+    .generateContainer > ul {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        justify-content: center;
+        align-items: center;
     }
 
     .generatedLink {
         margin-left: 0rem;
-        margin-right: .2rem;
+        margin-right: 1rem;
         margin-bottom: 0rem;
     }
     
     .generateLine {
         display: none;
+    }
+
+    .copyBtnContainer {
+        margin-left: 0rem;
     }
 
     .advanceStat {

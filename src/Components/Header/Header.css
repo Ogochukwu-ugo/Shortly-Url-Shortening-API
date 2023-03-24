@@ -17,6 +17,7 @@
     font-weight: 700;
     margin-top: 2rem;
     padding: 1.5rem;
+    justify-content: center;
     color: whitesmoke;
     background-color: var(--dviolet);
     cursor: pointer;
@@ -38,15 +39,36 @@
     font-size: 1.5rem;
 }
 
-.logBtn,
-#navLink {
+.nav-plain {
+    line-height: 3.5rem;
     color: whitesmoke;
+    text-decoration: none;
 }
 
+.menuToggle,
+.menuToggle:focus {
+    border: none;
+    box-shadow: none;
+}
+
+.menu {
+    width: 100%;
+    height: 1.8rem;
+    color: var(--gray);
+}
+
+.logBtn {
+    line-height: 2.5rem;
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.nav-plain:hover,
 .logBtn:active,
-#navLink:active,
-#navLink:hover {
-    color: var(vdarkviolet) !important;
+.active-link,
+.active-link:hover {
+    color: var(--vdarkviolet) !important;
+    text-decoration: none;
 }
 
 .signBtn {
@@ -100,14 +122,29 @@
         font-size: .8rem;
     }
 
-    .logBtn,
-    #navLink {
-        color: var(--gray);
+    .nav-plain {
+        line-height: 0rem;
+        color: var(--grayviolet);
+        text-decoration: none;
     }
+
+    .logBtn {
+        line-height: 0rem;
+        color: var(--grayviolet);
+        text-decoration: none;
+    }
+
+    .logBtn:active,
+    .active-link,
+    .active-link:hover {
+        color: var(--vdarkviolet) !important;
+        text-decoration: none;
+    }
+    
 
     .signBtn {
         width: 5.5rem;
-        margin-left: 2.5rem;
+        margin-left: 2.3rem;
         margin-top: -1.2rem;
     }
 }
