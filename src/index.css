@@ -30,38 +30,3 @@ ul li {
   list-style: none;
 }
 
-.linkContainer {
-  /* justify-content: left;
-  align-items: center;
-  text-align: left; */
-  margin: .5rem 0rem;
-  padding: .8rem;
-  background-color: white;
-  border-radius: .4rem;
-}
-
-.generatedLink {
-  font-size: .8rem;
-  color: var(--cyan);
-}
-
-.copyBtn {
-  width: 100%;
-  font-size: .6rem;
-  font-weight: 600;
-  color: whitesmoke;
-  background-color: var(--cyan);
-}
-
-
-@media only screen and(min-width:768px) {
-  .linkContainer {
-    justify-content: space-around;
-    align-items: flex-end;
-    text-align: justify;
-  }
-
-  .copyBtn {
-    width: 50%;
-  }
-}

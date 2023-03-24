@@ -1,7 +1,9 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from 'react-router-dom';
 import Logo from '../../images/logo.svg';
 import { Container, Nav, NavItem } from 'react-bootstrap';
+import { GiHamburgerMenu } from 'react-icons/gi'
 import './Header.css'
 
 // const SIGNUP = "SignUp";
@@ -29,23 +31,24 @@ function Header() {
         <Navbar.Brand href="/" className='logo'>
           <img src={Logo} alt='logo'/>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="menuToggle">
+          <GiHamburgerMenu className='menu'/>
+        </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className='nav-gap'>
             {Navlinks.map((link) => (
               <NavItem key={link.title} className='nav-house'>
-                <Nav.Link
-                  href={link.href}
-                  id="navLink"
+                <NavLink
+                  to={link.href}
                   className={({
-                    active 
+                    isActive 
                   }) => [
                     "text-center",
-                    active ? "active-link " : " ",
+                    isActive ? " active-link " : " nav-plain",
                   ].join(" ")}
                 >
                   {link.title}
-                </Nav.Link>
+                </NavLink>
               </NavItem>
             ))}
             <hr className='d-lg-none'/>
