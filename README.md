@@ -1,7 +1,7 @@
 # Shortly
 
-<img src="https://github.com/Ogochukwu-ugo/Shortly-Url-Shortening-API/blob/main/src/images/footer-logo%20.svg
-" alt="Logo"/>
+![Logo](https://github.com/Ogochukwu-ugo/Shortly-Url-Shortening-API/blob/main/src/images/footer-logo%20.svg
+)
 
 This is a Frontend Mentor's URL shortening API coding challenge that aims to help one improve their coding skills by building realistic projects.
 
