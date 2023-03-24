@@ -1,6 +1,6 @@
 # Shortly
 
-![Shortly Logo](../shortly/src/images/footer-logo%20.svg)
+<img src="../../url-shortening-api-master/shortly/src/images/footer-logo .svg"/>
 
 This is a Frontend Mentor's URL shortening API coding challenge that aims to help one improve their coding skills by building realistic projects.
 
@@ -49,11 +49,70 @@ This is a Frontend Mentor's URL shortening API coding challenge that aims to hel
 
 ### Screenshots
 
-![Desktop](../shortly/src/images/Desktop-view.png)
-![Mobile](../shortly/src/images/Mobile-view.png)
+![Desktop](../../url-shortening-api-master/shortly/src/images/Desktop-view.png)
+![Mobile](../../url-shortening-api-master/shortly/src/images/Mobile-view.png)
 
   ### What I Learnt
-  During the period of building this application, I really learnt alot both in the area of mapping through nav links, routing, and working on the url shortening functionality.
+  During the application building period, I really learnt alot both in the area of mapping through nav links, routing, and working on the url shortening functionality.
+  One of the things I learnt about nav links mapping is that I can actually use the react-bootstrap navigation codes along with the react-router-dom nav link and the combination will come out as desired as seen in the code below:
+
+  ```
+  function Header() {
+    return (
+      <Navbar expand="lg" className='navbar-main mx-auto'>
+        <Container className='nav-container' >
+          <Navbar.Brand href="/" className='logo'>
+            <img src={Logo} alt='logo'/>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="menuToggle">
+            <GiHamburgerMenu className='menu'/>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className='nav-gap'>
+              {Navlinks.map((link) => (
+                <NavItem key={link.title} className='nav-house'>
+                  <NavLink
+                    to={link.href}
+                    className={({
+                      isActive 
+                    }) => [
+                      "text-center",
+                      isActive ? " active-link " : " nav-plain",
+                    ].join(" ")}
+                  >
+                    {link.title}
+                  </NavLink>
+                </NavItem>
+              ))}
+              <hr className='d-lg-none'/>
+              <NavItem className='nav-btn'>
+                <Nav.Link href='/login' className='logBtn '>
+                  Login
+                </Nav.Link>
+                <Nav.Link href='/signup' className='signBtn'>
+                  Sign Up
+                </Nav.Link>
+              </NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+```
+On the aspect of the url shortening functionality, I learnt alot especially in the area of adding new shortened link to the existing link both on the local storage and the result section. Though it was not an easy task, but with the help google research, I was able to solve all the issues I encountered during the application development.
+
+### Link
+
+- Live Site URL: [Shortly Url Shortening API](https://your-live-site-url.com)
+
+### Acknowledgement
+
+I would love to acknowledge and thank all developers who take out time to put out solutions to dev issues on youtube just to help anyone facing such challenges. Some of such developers are:
+- Caleb Curry, this video of his (https://www.youtube.com/watch?v=uFSu6tgYKRY) really helped when I was having the challenges making the active state of my navigation visible.
+- TsbSankara's video (https://www.youtube.com/watch?v=Y8FSiP9_Pb0) also helped when I was fixing the url shortening functionality.
+
+Also, Stackoverflow and Freecampcode articles where of great help during the project development.
 
 
   

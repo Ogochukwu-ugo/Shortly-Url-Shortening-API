@@ -104,27 +104,30 @@ source[srcset^="../src/images/"] {
 .errormsg {
     position:absolute;
     font-size: .7rem;
-    /* top: 0%; */
     left: 0%;
-    border-color: var(--red);
     color: var(--red);
 }
 
-#shortenLink {
+.shortenLink {
     width: 100%;
     border: none;
-    font-size: .9rem;
+    outline: none;
+    font-size: .7rem;
     font-weight: 500;
+    color: var(--grayviolet);
+}
+
+.shortenLink::placeholder {
     color: var(--grayviolet);
 }
 
 .errorClass {
-    outline: 2px solid var(--red);
+    outline: 1px solid var(--red);
+    color: var(--red);
 }
 
-#shortenLink::placeholder {
-    font-weight: 500;
-    color: var(--grayviolet);
+.errorClass::-webkit-input-placeholder {
+    color: var(--red);
 }
 
 #shortenBtn {

@@ -6,7 +6,7 @@ import '../../App.css';
 
 function Shorten() {
 
-    const [text, setText] = useState("");
+    const [url, setUrl] = useState("");
     const [links, setLinks] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
     const inputRef = useRef(null);
@@ -29,7 +29,7 @@ function Shorten() {
     };
 
     const formValidation = () => {
-        if (text === "") {
+        if (url === "" || !url) {
              setErrorMessage("Please add a link");
             console.log("Failed to input link");
             inputRef.current.focus();
@@ -46,12 +46,12 @@ function Shorten() {
 
     const shortenLink = async () => {
         try {
-          const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`);
+          const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
           const data = await response.json();
           console.log(data.result);
 
           const newLink = {
-            original_link: text,
+            original_link: url,
             full_short_link: data.result.full_short_link,
             buttonText: 'Copy'
           };
@@ -59,7 +59,7 @@ function Shorten() {
           const updatedLinks = [...links, newLink];
          setLinks(updatedLinks);
          localStorage.setItem('links', JSON.stringify(updatedLinks));
-          setText('');
+          setUrl('');
         } catch (error) {
           console.error(error);
         }
@@ -86,10 +86,9 @@ function Shorten() {
                     type='url' 
                     name='url' 
                     placeholder='Shorten a link here...' 
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    className={`form-control-lg ${errorMessage ? 'errorClass' : ''}`} 
-                    id='shortenLink'
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    className={`form-control-lg shortenLink ${errorMessage ? 'errorClass' : ''}`} 
                     ref={inputRef}
                 />
                {errorMessage &&  <div className="errormsg">{errorMessage}</div>}
@@ -99,7 +98,6 @@ function Shorten() {
                     value='Shorten it!' 
                     className='btn btn-md' 
                     id='shortenBtn'
-                    onClick={handleSubmit}
                 />
             </form>
             <section className='result'>
