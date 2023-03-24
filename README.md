@@ -1,6 +1,6 @@
 # Shortly
 
-<img src='../../url-shortening-api-master/shortly/src/images/logo.svg' alt='Logo'/>
+![Shortly Logo](../shortly/src/images/footer-logo%20.svg)
 
 This is a Frontend Mentor's URL shortening API coding challenge that aims to help one improve their coding skills by building realistic projects.
 
@@ -29,14 +29,31 @@ This is a Frontend Mentor's URL shortening API coding challenge that aims to hel
   * react-bootstrap for styling the application, and,
   * react-icons.
 
-  Although I'm still working on this project, these are the dependencies that has been added to the application as at the time of this documentation. 
-  Due to the time frame giving for the completion of the project, I started immeidiately working on the project before creating a GitHub repository. 
-
   ### Building of the application in full
   Since the react framework is component base, I started developing the application by cleaning up the default codes on the App.js file, and added the codes which I needed to make the app to start running. After that, I ran ```npm start`` so my work can runs the app in the development mode.\
   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
   I cotinued my work by creating a component folder where I created more folders which would be holding the different files that will be having the codes essential for the app development.
+  Below are the folders created in the component folder:
+
+  - Header : Inside the header folder are two(2) files which are :
+    - Header.js: This is where all the codes used in creating the navigation bar can be found.
+    - Header.css: This holds all the custom css codes used in styling the navigation bar.
+
+  - Footer : Inside this folder also are found same types of files like in the header folder, but the only difference is that these files holds the codes used for creating and styling the footer of the website.
+
+  - Features : This folder is made up of six(6) files and 5 of the files, are actually a smaller component on it's own holding different codes that produce the actual design of the project found in the Features.js file.
+
+  To make sure I have a well functional website with the active states working as expected, I added 4 additional folders to the component folder, and added an AppLayout.js file where I kind of structured how I wanted the application layout to look.
+  Still on the functionality of the website, I created a Router.js file in the src folder, where all codes about the navigation routing can be found.
+
+### Screenshots
+
+![Desktop](../shortly/src/images/Desktop-view.png)
+![Mobile](../shortly/src/images/Mobile-view.png)
+
+  ### What I Learnt
+  During the period of building this application, I really learnt alot both in the area of mapping through nav links, routing, and working on the url shortening functionality.
 
 
   
