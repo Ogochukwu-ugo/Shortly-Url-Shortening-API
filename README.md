@@ -1,6 +1,7 @@
 # Shortly
 
-<img src="../../url-shortening-api-master/shortly/src/images/footer-logo .svg"/>
+<img src="https://github.com/Ogochukwu-ugo/Shortly-Url-Shortening-API/blob/main/src/images/footer-logo%20.svg
+" alt="Logo"/>
 
 This is a Frontend Mentor's URL shortening API coding challenge that aims to help one improve their coding skills by building realistic projects.
 
@@ -49,8 +50,8 @@ This is a Frontend Mentor's URL shortening API coding challenge that aims to hel
 
 ### Screenshots
 
-![Desktop](../../url-shortening-api-master/shortly/src/images/Desktop-view.png)
-![Mobile](../../url-shortening-api-master/shortly/src/images/Mobile-view.png)
+![Desktop](https://github.com/Ogochukwu-ugo/Shortly-Url-Shortening-API/blob/main/src/images/Desktop-view.png)
+![Mobile](https://github.com/Ogochukwu-ugo/Shortly-Url-Shortening-API/blob/main/src/images/Mobile-view.png)
 
   ### What I Learnt
   During the application building period, I really learnt alot both in the area of mapping through nav links, routing, and working on the url shortening functionality.
