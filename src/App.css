@@ -35,15 +35,13 @@
     margin-left: 0rem;
     border: none;
     border-radius: 1.6rem;
-    background-color: hsl(180, 65%, 50%);
+    background-color: var(--cyan);
     cursor: pointer;
 }
 
 .heroBtn:hover,
 #shortenBtn:hover {
-    background-color: var(--cyan);
-    opacity: .8;
-    color: whitesmoke;
+    opacity: .9;
 }
 
 .heroImg img {
@@ -103,12 +101,25 @@ source[srcset^="../src/images/"] {
     z-index: 1;
 }
 
+.errormsg {
+    position:absolute;
+    font-size: .7rem;
+    /* top: 0%; */
+    left: 0%;
+    border-color: var(--red);
+    color: var(--red);
+}
+
 #shortenLink {
     width: 100%;
     border: none;
     font-size: .9rem;
     font-weight: 500;
     color: var(--grayviolet);
+}
+
+.errorClass {
+    outline: 2px solid var(--red);
 }
 
 #shortenLink::placeholder {
@@ -128,8 +139,79 @@ source[srcset^="../src/images/"] {
     border-radius: .4rem;
 }
 
+.result {
+    height: 7.5rem;
+    margin-top: .5rem;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.linkContainer {
+    justify-content: left;
+    text-align: left;
+    margin-top: .5rem;
+    padding: .4rem .4rem;
+    background-color: white;
+    border-radius: .4rem;
+}
+
+.generateContainer {
+    justify-content: center;
+    align-items: center;
+}
+
+.generateContainer > ul {
+    margin-top: .3rem;
+    margin-bottom: .3rem;
+    justify-content: center;
+    align-items: left;
+}
+
+  
+.generatedLink {
+    margin-left: -2rem;
+    margin-right: 0rem;
+    margin-bottom: .2rem;
+    font-size: .8rem;
+    color: var(--cyan);
+}
+  
+.generateLine {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--gray);
+}
+
+.copyBtnContainer {
+    margin-left: -2rem;
+}
+  
+.copyBtn {
+    min-width: 100%;
+    font-size: .6rem;
+    font-weight: 600;
+    color: whitesmoke;
+    background-color: var(--cyan);
+}
+
+.copyBtn:hover {
+    color: white;
+    background-color: var(--cyan);
+    opacity: .9;
+}
+
+.copyBtn:focus {
+    color: whitesmoke;
+    background-color: var(--dviolet);
+}
+
 .advanceStat {
-    padding-top: 2%;
+    padding-top: 20%;
     padding-bottom: 5%;
 }
 
@@ -269,6 +351,44 @@ source[srcset^="../src/images/"] {
         margin-top: 0rem;
     }
 
+
+    .linkContainer {
+        justify-content: space-between;
+        text-align: center;
+        padding: 0rem .4rem;
+    }
+
+    .errormsg {
+        top: 100%;
+        left: 0%;
+    }
+
+    .generateContainer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .generateContainer > ul {
+        margin-top: .3rem;
+        margin-bottom: .3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .generatedLink {
+        margin-left: 0rem;
+        margin-right: 1rem;
+        margin-bottom: 0rem;
+    }
+    
+    .generateLine {
+        display: none;
+    }
+
+    .copyBtnContainer {
+        margin-left: 0rem;
+    }
+
     .cardContainer {
         display: flex;
         flex-direction: row;
@@ -279,6 +399,10 @@ source[srcset^="../src/images/"] {
     .card {
         padding: 3rem 1rem 0rem 1rem;
         text-align: left;
+    }
+
+    .advanceStat {
+        padding-top: 8%;
     }
 
     .advanceStat p {
@@ -360,6 +484,48 @@ source[srcset^="../src/images/"] {
         margin-top: 0rem;
     }
 
+
+    .linkContainer {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem .4rem;
+    }
+
+    .errormsg {
+        top: 100%;
+        left: 0%;
+    }
+
+    .generateContainer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .generateContainer > ul {
+        margin-top: .5rem;
+        margin-bottom: .5rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .generatedLink {
+        margin-left: 0rem;
+        margin-right: 1rem;
+        margin-bottom: 0rem;
+    }
+    
+    .generateLine {
+        display: none;
+    }
+
+    .copyBtnContainer {
+        margin-left: 0rem;
+    }
+
+    .advanceStat {
+        padding-top: 8%;
+    }
+
     .advanceStat p {
         width: 30%;
     }
@@ -408,3 +574,9 @@ source[srcset^="../src/images/"] {
         margin-top: 17.5%;
     }
 }
+
+
+
+  
+  
+  
