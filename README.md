@@ -104,7 +104,7 @@ On the aspect of the url shortening functionality, I learnt alot especially in t
 
 ### Link
 
-- Live Site URL: [Shortly Url Shortening API](https://your-live-site-url.com)
+- Live Site URL: [Shortly Url Shortening API](https://shortly-url-shortening-api-psi.vercel.app/)
 
 ### Acknowledgement
 
