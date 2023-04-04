@@ -145,13 +145,13 @@ source[srcset^="../src/images/"] {
 .result {
     height: 7.5rem;
     margin-top: .5rem;
-    overflow: hidden;
-    overflow-y: auto;
+    /* overflow: hidden;
+    overflow-y: auto; */
 }
 
-.result::-webkit-scrollbar {
+/* .result::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .linkContainer {
     justify-content: left;

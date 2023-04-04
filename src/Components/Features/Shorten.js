@@ -10,6 +10,7 @@ function Shorten() {
     const [links, setLinks] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
     const inputRef = useRef(null);
+    const [shortenHeight, setShortenHeight] = useState(null);
 
 
 
@@ -20,6 +21,21 @@ function Shorten() {
             setLinks(storedLinks);
         }
     }, []);
+
+    useEffect(() => {
+        if (inputRef.current) {
+          setShortenHeight(inputRef.current.clientHeight);
+        }
+      }, [setShortenHeight]);
+
+    useEffect(() => {
+        if (shortenHeight) {
+        document.documentElement.style.setProperty(
+        "--shorten-section-height",
+       ` ${shortenHeight}px`
+        );
+        }
+        }, [shortenHeight]);
 
 
     const handleSubmit = async (e) => {
@@ -76,7 +92,7 @@ function Shorten() {
 
   return (
     <>
-        <section className='statFormSection'>
+        <section className='statFormSection' style={{ marginBottom: `${shortenHeight}px` }}>
             <picture className='bgShorten'>
                 <source srcSet={ShortenMobile} media="(max-width:499px)"/>
                  <img src={ShortenDesktop} alt='bg-desktop' className='rounded-3'/>
@@ -104,7 +120,7 @@ function Shorten() {
                 {links.map((link,index) => (
                     <article key={index} className='d-flex flex-md-row flex-column linkContainer'>
                         <div className='justify-content-center'>
-                            <h6 className='my-auto'>{link.original_link}</h6>
+                            <h6 className='my-auto' style={{wordWrap: 'break-word'}}>{link.original_link}</h6>
                         </div>
                         <div className='generateLine'></div>
                         <div className='generateContainer my-auto'>
