@@ -8,7 +8,7 @@ import Shorten from './Shorten'
 function Statistics() {
    
   return (
-    <div className='statistics'>
+    <main className='statistics'>
         <Shorten/>
         <article className='advanceStat'>
             <h3>Advanced Statistics</h3>
@@ -20,7 +20,7 @@ function Statistics() {
         <div>
             <Cards/>
         </div>
-    </div>
+    </main>
   )
 }
 

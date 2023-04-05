@@ -4,12 +4,12 @@ import Footer from './Footer/Footer';
 
 function AppLayout({children}) {
   return (
-    <div>
+    <main>
         <div>
             {children}
         </div>
         <Footer/>
-    </div>
+    </main>
   )
 }
 

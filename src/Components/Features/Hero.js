@@ -4,7 +4,7 @@ import '../../App.css'
 
 export default function Hero() {
   return (
-    <section className=' heroMain'>
+    <main className=' heroMain'>
         <div className='col-md-7 heroContent'>
             <h1>More than just shorter links</h1>
             <p>
@@ -16,6 +16,6 @@ export default function Hero() {
         <div className='col-md-5 heroImg'>
             <img src={HeroImage} alt='illustration of a person working img-responsive'/>
         </div>
-    </section>
+    </main>
   )
 }

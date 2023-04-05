@@ -92,7 +92,7 @@ function Shorten() {
 
   return (
     <>
-        <section className='statFormSection' style={{ marginBottom: `${shortenHeight}px` }}>
+        <main className='statFormSection' style={{ marginBottom: `${shortenHeight}px` }}>
             <picture className='bgShorten'>
                 <source srcSet={ShortenMobile} media="(max-width:499px)"/>
                  <img src={ShortenDesktop} alt='bg-desktop' className='rounded-3'/>
@@ -118,14 +118,16 @@ function Shorten() {
             </form>
             <section className='result'>
                 {links.map((link,index) => (
-                    <article key={index} className='d-flex flex-md-row flex-column linkContainer'>
-                        <div className='justify-content-center'>
-                            <h6 className='my-auto' style={{wordWrap: 'break-word'}}>{link.original_link}</h6>
+                    <article key={index} className='d-flex flex-lg-row flex-column linkContainer'>
+                        <div className='justify-content-center my-auto'>
+                        <h6 className='my-auto' style={{ wordWrap: (link.original_link.length > 40 ? 'break-word' : 'normal'), width: (link.original_link.length > 40 ? '60%' : 'long-link')}}>
+                            {link.original_link}
+                        </h6>
                         </div>
-                        <div className='generateLine'></div>
+                        <div className='generateLine my-auto'></div>
                         <div className='generateContainer my-auto'>
                             <ul className='d-flex flex-md-row flex-column'>
-                                <li className='generatedLink'>{link.full_short_link}</li>
+                                <li className='generatedLink my-auto'>{link.full_short_link}</li>
                                 <li className='copyBtnContainer'>
                                     <button className='btn copyBtn' onClick={() => handleCopy(index)}>
                                         {link.buttonText}
@@ -136,7 +138,7 @@ function Shorten() {
                     </article>
                 ))}
             </section>
-        </section>
+        </main>
     </>
   )
 }
