@@ -326,7 +326,7 @@ source[srcset^="../src/images/"] {
 
 
 
-@media only screen and (min-width:768px) and (max-width: 1099px) {
+@media only screen and (min-width:768px) and (max-width: 1099.99px) {
     .heroMain {
         display: flex;
         flex-direction: row;
@@ -533,7 +533,7 @@ source[srcset^="../src/images/"] {
     }
 
     .copyBtnContainer {
-        margin-left: 0rem;
+        margin-left: -.8rem;
     }
 
     .advanceStat {
