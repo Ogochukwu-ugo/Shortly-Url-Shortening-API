@@ -144,14 +144,15 @@ source[srcset^="../src/images/"] {
 }
 
 .result {
-    height: 7.5rem;
+    /* height: 7.5rem; */
     overflow: hidden;
-    overflow-y: auto;
+    resize: horizontal;
+    /* overflow-y: auto; */
 }
 
-.result::-webkit-scrollbar {
+/* .result::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .linkContainer {
     justify-content: left;
@@ -314,11 +315,15 @@ source[srcset^="../src/images/"] {
     margin-top: 10%;
 }
 
-.long-link {
-    width: 80%;
+.mainLink {
+    overflow-wrap: break-word;
     word-wrap: break-word;
-    text-align: left;
-    margin-left: -2rem;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
   
 

@@ -120,7 +120,7 @@ function Shorten() {
                 {links.map((link,index) => (
                     <article key={index} className='d-flex flex-lg-row flex-column linkContainer'>
                         <div className='justify-content-center my-auto'>
-                        <h6 className='my-auto' style={{ wordWrap: (link.original_link.length > 40 ? 'break-word' : 'normal'), width: (link.original_link.length > 40 ? '60%' : 'long-link')}}>
+                        <h6 className='my-auto mainLink'>
                             {link.original_link}
                         </h6>
                         </div>
