@@ -144,15 +144,14 @@ source[srcset^="../src/images/"] {
 }
 
 .result {
-    /* height: 7.5rem; */
+    height: 7.5rem;
     overflow: hidden;
-    resize: horizontal;
-    /* overflow-y: auto; */
+    overflow-y: auto;
 }
 
-/* .result::-webkit-scrollbar {
+.result::-webkit-scrollbar {
     display: none;
-} */
+}
 
 .linkContainer {
     justify-content: left;
